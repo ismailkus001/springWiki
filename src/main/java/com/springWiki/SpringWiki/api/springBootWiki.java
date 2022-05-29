@@ -3,15 +3,24 @@ package com.springWiki.SpringWiki.api;
 import com.springWiki.SpringWiki.dto.categoryDTO;
 import com.springWiki.SpringWiki.service.mainPageQueryService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@RequestMapping
+import java.util.List;
+
+@RestController
+@RequestMapping("/wiki")
 @RequiredArgsConstructor
 public class springBootWiki {
     private final mainPageQueryService service;
-    private ResponseEntity<categoryDTO>
+
+    @GetMapping
+    public ResponseEntity<List<categoryDTO>> getCategory() {
+
+        return new ResponseEntity<>(service.getCategory(), HttpStatus.OK);
+    }
 
 }

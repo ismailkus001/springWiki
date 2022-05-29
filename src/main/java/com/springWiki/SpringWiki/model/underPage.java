@@ -1,13 +1,15 @@
 package com.springWiki.SpringWiki.model;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 @Entity
-@Data
-@Table(name = "underPage")
+@Getter
+@Setter
+@EqualsAndHashCode(callSuper = false)
 public class underPage extends mainPage {
 
 

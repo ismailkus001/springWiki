@@ -4,5 +4,6 @@ import lombok.Data;
 
 @Data
 public class categoryDTO {
-    private
+    private mainPageDTO mainTitle;
+    private mainPageDTO underTitle;
 }

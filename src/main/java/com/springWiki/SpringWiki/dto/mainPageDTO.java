@@ -6,5 +6,6 @@ import lombok.Data;
 public class mainPageDTO {
 
 private String title;
+private underPageDTO underPageDTO;
 private String explanation;
 }
