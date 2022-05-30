@@ -7,7 +7,7 @@ import com.springWiki.SpringWiki.request.RequestPage;
 import java.util.List;
 
 public interface mainPageQueryService {
-    List<categoryDTO> getCategory();
+    categoryDTO getCategory();
 
     List<underPage> getPage(RequestPage request);
 }

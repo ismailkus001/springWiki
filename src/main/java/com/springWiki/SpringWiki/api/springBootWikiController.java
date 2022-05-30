@@ -1,6 +1,7 @@
 package com.springWiki.SpringWiki.api;
 
 import com.springWiki.SpringWiki.dto.categoryDTO;
+import com.springWiki.SpringWiki.model.mainPage;
 import com.springWiki.SpringWiki.service.mainPageQueryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,11 +15,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/wiki")
 @RequiredArgsConstructor
-public class springBootWiki {
+public class springBootWikiController {
     private final mainPageQueryService service;
 
     @GetMapping
-    public ResponseEntity<List<categoryDTO>> getCategory() {
+    public ResponseEntity<categoryDTO> getCategory() {
 
         return new ResponseEntity<>(service.getCategory(), HttpStatus.OK);
     }
