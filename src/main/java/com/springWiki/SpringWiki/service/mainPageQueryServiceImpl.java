@@ -24,4 +24,5 @@ public class mainPageQueryServiceImpl implements mainPageQueryService {
     public Optional<mainPage> getPage(String title) {
         return wikiRepository.findAll().stream().filter(mainPage -> mainPage.getTitle().equals(title)).findFirst();
     }
+
 }

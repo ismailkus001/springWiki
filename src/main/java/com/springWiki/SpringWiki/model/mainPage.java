@@ -29,7 +29,6 @@ public class mainPage {
     @GeneratedValue
     private Long ID;
     @OneToMany(targetEntity = underPage.class, mappedBy = "mainPage", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-
     private List<underPage> underPages;
 
     @NotNull

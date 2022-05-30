@@ -5,4 +5,6 @@ import com.springWiki.SpringWiki.request.RequestContent;
 
 public interface adminContentService {
     mainPage addContent(RequestContent requestContent);
+
+    int deleteContent(RequestContent requestContent);
 }
