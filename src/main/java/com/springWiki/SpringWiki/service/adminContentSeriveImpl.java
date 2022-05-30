@@ -27,6 +27,6 @@ public class adminContentSeriveImpl implements adminContentService {
 
     @Override
     public int deleteContent(RequestContent requestContent) {
-        return  wikiRepository.deleteByTitle(requestContent.getTitle());
+        return wikiRepository.deleteByTitle(requestContent.getTitle());
     }
 }

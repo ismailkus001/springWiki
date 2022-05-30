@@ -5,7 +5,6 @@ import com.springWiki.SpringWiki.request.RequestContent;
 import com.springWiki.SpringWiki.service.adminContentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,9 +24,10 @@ public class adminContent {
 
         return new ResponseEntity<>(service.addContent(requestContent), HttpStatus.OK);
     }
+
     @DeleteMapping("/delete")
-    public ResponseEntity<Integer> deleteContent(@RequestBody RequestContent requestContent){
-        return new ResponseEntity<>(service.deleteContent(requestContent),HttpStatus.OK);
+    public ResponseEntity<Integer> deleteContent(@RequestBody RequestContent requestContent) {
+        return new ResponseEntity<>(service.deleteContent(requestContent), HttpStatus.OK);
     }
 
 }
