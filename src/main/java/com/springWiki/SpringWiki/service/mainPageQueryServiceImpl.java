@@ -1,31 +1,27 @@
 package com.springWiki.SpringWiki.service;
 
-import com.springWiki.SpringWiki.dto.categoryDTO;
 import com.springWiki.SpringWiki.model.mainPage;
-import com.springWiki.SpringWiki.model.underPage;
 import com.springWiki.SpringWiki.repository.wikiRepository;
-import com.springWiki.SpringWiki.request.RequestPage;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class mainPageQueryServiceImpl implements mainPageQueryService {
+
     @Autowired
     private wikiRepository wikiRepository;
 
 
     @Override
-    public categoryDTO getCategory() {
-        List<mainPage> mainPage = wikiRepository.findAll();
-        ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(mainPage, categoryDTO.class);
+    public List<mainPage> getCategory() {
+        return wikiRepository.findAll();
     }
 
     @Override
-    public List<underPage> getPage(RequestPage request) {
-        return null;
+    public Optional<mainPage> getPage(String title) {
+        return wikiRepository.findAll().stream().filter(mainPage -> mainPage.getTitle().equals(title)).findFirst();
     }
 }

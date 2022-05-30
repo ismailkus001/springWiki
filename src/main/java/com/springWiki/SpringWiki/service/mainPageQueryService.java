@@ -1,13 +1,13 @@
 package com.springWiki.SpringWiki.service;
 
-import com.springWiki.SpringWiki.dto.categoryDTO;
-import com.springWiki.SpringWiki.model.underPage;
-import com.springWiki.SpringWiki.request.RequestPage;
+import com.springWiki.SpringWiki.model.mainPage;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface mainPageQueryService {
-    categoryDTO getCategory();
+    List<mainPage> getCategory();
 
-    List<underPage> getPage(RequestPage request);
+
+    Optional<mainPage> getPage(String title);
 }
